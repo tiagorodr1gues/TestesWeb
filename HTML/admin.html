@@ -1,14 +1,14 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel Admin - Senda</title>
-  <link rel="stylesheet" href="/CSS/criar-conta-admin.css" />
+  <link rel="stylesheet" href="../CSS/criar-conta-admin.css" />
 </head>
 <body>
-  <!-- MENU -->
   <header class="navbar">
-    <a href="/index.html" class="logo">Senda</a>
+    <a href="../index.html" class="logo">Senda</a>
     <nav class="menu">
       <a href="Prepare-se.html">Prepare-se</a>
       <a href="Durante o Caminho.html">Durante o Caminho</a>
@@ -16,7 +16,6 @@
       <a href="contacto.html">Contactos</a>
     </nav>
 
-    <!-- Botões lado direito: logout + tema -->
     <div class="top-right-buttons">
       <button id="logout-btn" class="login-button">Logout</button>
       <button id="theme-toggle" aria-label="Alternar tema">🌑</button>
@@ -36,13 +35,11 @@
         </tr>
       </thead>
       <tbody id="user-table-body">
-        <!-- Linhas de utilizadores serão inseridas via JS -->
-      </tbody>
+        </tbody>
     </table>
   </section>
 
   <script>
-    // Alternar tema claro / escuro
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
@@ -57,7 +54,6 @@
 
     updateThemeIcon();
 
-    // Exemplo de dados de utilizadores
     let users = [
       { id: 1, name: 'João Silva', email: 'joao@email.com', isAdmin: true },
       { id: 2, name: 'Maria Santos', email: 'maria@email.com', isAdmin: false },
@@ -81,7 +77,6 @@
         userTableBody.appendChild(tr);
       });
 
-      // Adicionar evento aos botões Excluir
       document.querySelectorAll('.delete-btn').forEach(button => {
         button.addEventListener('click', (e) => {
           const id = parseInt(e.target.dataset.id);
@@ -93,17 +88,14 @@
 
     renderUsers();
 
-    // Botão logout (exemplo simples)
-    document.getElementById('logout-btn').addEventListener('click', () => {
-      alert('Logout efetuado (implementar lógica real)');
-      // Redirecionar ou limpar sessão
-      window.location.href = '/index.html';
-    });
-    // Logout botão topo também
-    document.getElementById('logout-btn-top').addEventListener('click', () => {
-      alert('Logout efetuado (implementar lógica real)');
-      window.location.href = '/index.html';
-    });
+    // CORREÇÃO: Logout redireciona para a raiz
+    const handleLogout = () => {
+      alert('Logout efetuado!');
+      window.location.href = '../index.html';
+    };
+
+    document.getElementById('logout-btn').addEventListener('click', handleLogout);
+    document.getElementById('logout-btn-top').addEventListener('click', handleLogout);
   </script>
 </body>
 </html>
