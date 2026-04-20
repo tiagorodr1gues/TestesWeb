@@ -1,0 +1,237 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #ddd;
+}
+
+/* Menu verde */
+.navbar {
+  background-color: #2e8b57;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  position: relative;
+}
+.navbar a.logo {
+  position: absolute;
+  left: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+}
+.navbar .menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.navbar .menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.navbar .menu a:hover {
+  text-decoration: underline;
+}
+
+/* Container direita (login + tema) */
+.top-right-buttons {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botão Entrar */
+.login-button {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.login-button:hover {
+  background-color: #246b45;
+}
+
+/* Botão tema */
+#theme-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0 8px;
+  line-height: 1;
+  transition: color 0.3s;
+}
+#theme-toggle:hover {
+  color: #ddd;
+}
+
+/* Formulário criar conta */
+main {
+  max-width: 400px;
+  margin: 3rem auto 4rem auto;
+  padding: 1.5rem 2rem;
+  background: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+body.dark-theme main {
+  background: #222;
+  color: #ddd;
+  box-shadow: 0 4px 8px rgb(255 255 255 / 0.1);
+}
+
+main h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2e8b57;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #2e8b57;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #2e8b57;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button[type="submit"]:hover {
+  background-color: #246b45;
+}
+
+.login-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.login-link a {
+  color: #2e8b57;
+  font-weight: bold;
+  text-decoration: none;
+}
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+  background: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+}
+footer h3,
+footer h4 {
+  margin-top: 0;
+}
+footer form input[type="email"] {
+  padding: 8px;
+  width: 300px;
+  max-width: 100%;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+footer form button {
+  padding: 8px 16px;
+  background: #000000;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer ul li a {
+  text-decoration: none;
+  color: #000;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}
+footer .flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+footer .flex-item {
+  flex: 1 1 300px;
+}
+footer .flex-item-small {
+  flex: 1 1 150px;
+}
+
+/* Tema escuro no footer */
+body.dark-theme footer {
+  background: #222;
+  color: #ccc;
+}
+body.dark-theme footer ul li a {
+  color: #ccc;
+}
+
+/* Links no conteúdo com tema escuro */
+body.dark-theme a {
+  color: #000000;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto - Senda</title>
+  <link rel="stylesheet" href="/CSS/contacto.css" />
+</head>
+<body>
+
+  <!-- MENU -->
+  <header class="navbar">
+    <a href="/index.html" class="logo">A Senda de Santiago</a>
+    <nav class="menu">
+      <a href="Prepare-se.html">Prepare-se</a>
+      <a href="Durante o Caminho.html">Durante o Caminho</a>
+      <a href="Santiago e Galiza.html">Santiago e Galiza</a>
+      <a href="contacto.html">Contactos</a>
+    </nav>
+
+    <!-- Botões lado direito: tema + login -->
+    <div class="top-right-buttons">
+      <button id="theme-toggle" aria-label="Alternar tema">🌑</button>
+
+      
+        </form>
+        <div class="create-account">
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h1>Caso precises não penses duas vezes, entra em contacto!</h1>
+    <p>Se tiveres alguma dúvida, podes entrar em contacto por aqui.</p>
+    <form
+      id="contactForm"
+      action="mailto:emailexemplo@exemplo.com"
+      method="post"
+      enctype="text/plain">
+      <input type="text" name="nome" placeholder="O seu nome" required />
+      <input type="email" name="email" placeholder="O seu email" required />
+      <textarea
+        name="mensagem"
+        placeholder="A sua mensagem"
+        required>
+      </textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </section>
+  <script src="/js/views/dia-noite.js"></script>
+</body>
+</html>

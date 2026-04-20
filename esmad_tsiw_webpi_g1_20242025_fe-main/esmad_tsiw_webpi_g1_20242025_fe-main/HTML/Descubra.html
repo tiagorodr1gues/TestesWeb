@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Senda </title>
+    <link rel="stylesheet" href="/CSS/Descubra.css" />
+    <link rel="stylesheet" href="/CSS/main.css" />
+  </head>
+  <body>
+    <!-- MENU -->
+    <header class="navbar">
+      <a href="/index.html" class="logo">A Senda de Santiago</a>
+      <nav class="menu">
+        <a href="Prepare-se.html">Prepare-se</a>
+        <a href="Durante o Caminho.html">Durante o Caminho</a>
+        <a href="Santiago e Galiza.html">Santiago e Galiza</a>
+        <a href="contacto.html">Contactos</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Descubra</h1>
+    </section>
+    <div class="carousel">
+      <div class="slide active" style="background-image: url('imagem1.jpg');">
+        <div class="content">
+          <h1>Slide 1</h1>
+          <p>Texto do primeiro slide.</p>
+          <a href="#" class="btn">Descubra</a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('imagem2.jpg');">
+        <div class="content">
+          <h1>Slide 2</h1>
+          <p>Texto do segundo slide.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('imagem3.jpg');">
+        <div class="content">
+          <h1>Slide 3</h1>
+          <p>Texto do terceiro slide.</p>
+          <a href="#" class="btn">Comece</a>
+        </div>
+      </div>
+  
+      <!-- Setas -->
+      <button class="arrow left" onclick="prevSlide()">❮</button>
+      <button class="arrow right" onclick="nextSlide()">❯</button>
+    </div>
+  
+    <script src="../scripts/Descubra.js"></script>
+  </body>
+</html>
