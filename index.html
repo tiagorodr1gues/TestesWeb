@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="pt"> <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Senda - Caminho de Santiago</title>
@@ -9,26 +8,22 @@
 <body>
   <header class="navbar">
     <a href="index.html" class="logo">Senda</a>
-<nav class="menu">
-  <a href="HTML/Prepare-se.html">Prepare-se</a>
-  <a href="HTML/Durante-o-Caminho.html">Durante o Caminho</a>
-  <a href="HTML/Santiago-e-Galiza.html">Santiago e Galiza</a>
-  
-  <a href="HTML/recomendacoes.html">Recomendações</a>
-  <a href="HTML/contacto.html">Contactos</a>
-</nav>
-
-<p>Não tem conta? <a href="html/criar-conta.html">Crie uma aqui</a></p>
-
-<a href="HTML/prepare-se.html" class="btn-hero">Prepare-se</a>
+    
+    <nav class="menu">
+      <a href="html/prepare-se.html">Prepare-se</a>
+      <a href="html/durante-o-caminho.html">Durante o Caminho</a>
+      <a href="html/santiago-e-galiza.html">Santiago e Galiza</a>
+      <a href="html/recomendacoes.html">Recomendações</a>
+      <a href="html/contacto.html">Contactos</a>
+    </nav>
 
     <div class="top-right-buttons">
       <button id="theme-toggle" aria-label="Alternar tema">🌑</button>
-
-      <button id="login-btn" class="login-button" aria-haspopup="true" aria-expanded="false">Entrar</button>
-      <div id="login-dropdown" class="login-dropdown" role="dialog" aria-modal="true" aria-labelledby="login-label">
+      <button id="login-btn" class="login-button">Entrar</button>
+      
+      <div id="login-dropdown" class="login-dropdown">
         <form id="login-form">
-          <label id="login-label" for="email">Email:</label>
+          <label for="email">Email:</label>
           <input type="email" id="email" name="email" placeholder="seu@email.com" required />
           <label for="password">Senha:</label>
           <input type="password" id="password" name="password" placeholder="Senha" required />
@@ -42,121 +37,13 @@
   </header>
 
   <section class="hero-banner">
-    <div></div>
     <div>
-      <p style="margin: 0; font-size: 1.2em;">Caminhe mais. Viva mais. Descubra o Caminho.</p>
+      <p style="font-size: 1.2em;">Caminhe mais. Viva mais. Descubra o Caminho.</p>
       <h1 style="font-size: 2.5em; margin: 0.5em 0;">Senda</h1>
       <a href="html/prepare-se.html" class="btn-hero">Prepare-se</a>
     </div>
   </section>
 
-  <section class="introdução">
-    <h2>Sinta a Jornada do Caminho de Santiago</h2>
-    <h3>"Mais de 300 000 pessoas por ano percorrem a rota de peregrinação mais antiga da Europa a pé, de bicicleta ou a cavalo. Escolha a sua forma de viver o Caminho"</h3>
-    <p>Um caminho estende-se pela Europa com destino a Santiago de Compostela.</p>
-    <p>O Caminho de Santiago foi e permanece o percurso mais antigo e reconhecido do continente europeu. Existem várias formas de chegar a Santiago e à Galiza, mas a melhor maneira de alcançar esse destino é através do próprio Caminho.</p>
-  </section>
-
-  <section id="gamification-section" style="max-width: 900px; margin: 40px auto; padding: 20px; background-color: #f0f9f1; border-radius: 12px; font-family: Arial, sans-serif;">
-    <h2>🎯 O Seu Caminho</h2>
-    <p><strong>Progresso:</strong> <span id="progress-value">0</span>%</p>
-    <div style="background: #ddd; border-radius: 10px; overflow: hidden; height: 20px; margin-bottom: 10px;">
-      <div id="progress-bar" style="height: 100%; width: 0%; background: green; transition: width 0.5s;"></div>
-    </div>
-    <p><strong>Nível:</strong> <span id="level">1</span> | <strong>XP:</strong> <span id="xp">0</span></p>
-    <button onclick="completeStage()" style="padding: 10px 20px; background-color: #4caf50; color: white; border: none; border-radius: 6px; cursor: pointer;">🚶 Marcar Etapa como Concluída</button>
-    <h3 style="margin-top: 20px;">🏅 Insígnias Conquistadas</h3>
-    <ul id="badges-list" style="list-style: none; padding-left: 0;"></ul>
-  </section>
-
-  <section class="informacoes-caminho" style="max-width: 900px; margin: 40px auto; padding: 0 20px; font-family: Arial, sans-serif;">
-    <div class="fade-in">
-      <h4>🚶‍♂️ O Caminho em Números</h4>
-      <p>Todos os anos, mais de <strong>300 mil pessoas</strong> seguem esta antiga rota de fé e descoberta.</p>
-    </div>
-    <div class="fade-in">
-      <h4>📜 História e Tradição</h4>
-      <p>Desde a Idade Média, este percurso tem ligado o coração da Europa à cidade de <strong>Santiago de Compostela</strong>.</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="flex-container">
-      <div class="flex-item">
-        <h3>Contactos</h3>
-        <ul>
-          <li><a href="mailto:info@senda.com">info@senda.com</a></li>
-          <li><a href="tel:+351990000000">+351 990 000 000</a></li>
-        </ul>
-      </div>
-      <div class="flex-item">
-        <h4>Subscreva a Newsletter</h4>
-        <form>
-          <input type="email" placeholder="O seu email" required />
-          <button type="submit">Subscrever</button>
-        </form>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top: 1rem;">© 2025 Senda. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    // Gamificação integrada
-    let progress = parseInt(sessionStorage.getItem("progress")) || 0;
-    let xp = parseInt(sessionStorage.getItem("xp")) || 0;
-    let level = parseInt(sessionStorage.getItem("level")) || 1;
-    let badges = JSON.parse(sessionStorage.getItem("badges")) || [];
-
-    function updateUI() {
-      document.getElementById("progress-value").innerText = progress;
-      document.getElementById("progress-bar").style.width = (progress > 100 ? 100 : progress) + "%";
-      document.getElementById("xp").innerText = xp;
-      document.getElementById("level").innerText = level;
-      updateBadgesUI();
-    }
-
-    function completeStage() {
-      if (progress < 100) {
-        progress += 5; 
-        xp += 200;
-        if (xp >= 1000) {
-          level++;
-          xp = 0;
-          alert("🎉 Subiste para o nível " + level + "!");
-        }
-        checkBadges();
-        saveData();
-        updateUI();
-      } else {
-        alert("🎊 Já completaste o Caminho!");
-      }
-    }
-
-    function checkBadges() {
-      if (progress >= 20 && !badges.includes("Primeiros Passos 👣")) badges.push("Primeiros Passos 👣");
-      if (progress >= 60 && !badges.includes("Meio Caminho 🥈")) badges.push("Meio Caminho 🥈");
-      if (progress >= 100 && !badges.includes("Peregrino de Ouro 🥇")) badges.push("Peregrino de Ouro 🥇");
-    }
-
-    function updateBadgesUI() {
-      const list = document.getElementById("badges-list");
-      list.innerHTML = badges.length ? "" : "<li>Nenhuma ainda...</li>";
-      badges.forEach(badge => {
-        const li = document.createElement("li");
-        li.textContent = badge;
-        list.appendChild(li);
-      });
-    }
-
-    function saveData() {
-      sessionStorage.setItem("progress", progress);
-      sessionStorage.setItem("xp", xp);
-      sessionStorage.setItem("level", level);
-      sessionStorage.setItem("badges", JSON.stringify(badges));
-    }
-
-    updateUI();
-  </script>
   <script src="js/views/dia-noite.js"></script>
 </body>
 </html>
