@@ -1,279 +1,290 @@
-/* Tema claro e escuro */
-body {
-    font-family: Arial, sans-serif;
-      background-color: white;
-      color: black;
-      transition: background-color 0.3s, color 0.3s;
-      margin: 0;
-      padding: 0;
-    }
-    body.dark-theme {
-      background-color: #121212;
-      color: #ddd;
-    }
+/* ── HERO ── */
+.hero {
+  position: relative;
+  height: calc(100vh - var(--navbar-h));
+  min-height: 520px;
+  background-image: url('https://www.cm-caminha.pt/thumbs/cmcaminha/uploads/writer_file/image/297/caminhos_de_santiago__1__1_1024_2500.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  overflow: hidden;
+}
 
-    /* Menu verde */
-    .navbar {
-      background-color: #2e8b57; 
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-      gap: 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      position: relative;
-    }
-    .navbar a.logo {
-      position: absolute;
-      left: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-      font-size: 1.3rem;
-    }
-    .navbar .menu {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-    .navbar .menu a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-    .navbar .menu a:hover {
-      text-decoration: underline;
-    }
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 40, 20, 0.78) 0%,
+    rgba(10, 40, 20, 0.45) 60%,
+    transparent 100%
+  );
+}
 
-    /* Container direita (login + tema) */
-    .top-right-buttons {
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.hero__conteudo {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  animation: fadeUp 0.9s ease both;
+}
 
-    /* Botão Entrar */
-    .login-button {
-      background-color: #2e8b57;
-      color: white;
-      border: none;
-      padding: 0.5em 1em;
-      font-weight: bold;
-      font-size: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .login-button:hover {
-      background-color: #246b45;
-    }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-    /* Botão tema */
-    #theme-toggle {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 1.3rem;
-      cursor: pointer;
-      padding: 0 8px;
-      line-height: 1;
-      transition: color 0.3s;
-    }
-    #theme-toggle:hover {
-      color: #ddd;
-    }
+.hero__tag {
+  display: inline-block;
+  background: var(--ouro);
+  color: #1a1a18;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+  border-radius: 100px;
+  margin-bottom: 1.2rem;
+}
 
-    /* Dropdown/form login */
-    .login-dropdown {
-      display: none;
-      position: absolute;
-      top: 110%;
-      right: 0;
-      background-color: white;
-      color: black;
-      border-radius: 6px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      padding: 1rem;
-      width: 260px;
-      z-index: 110;
-      font-family: Arial, sans-serif;
-    }
+.hero__titulo {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  color: white;
+  line-height: 1.08;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
 
-    .login-dropdown.active {
-      display: block;
-    }
+.hero__sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
 
-    .login-dropdown input[type="email"],
-    .login-dropdown input[type="password"] {
-      width: 100%;
-      padding: 8px;
-      margin: 6px 0 12px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
+.hero__botoes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-    .login-dropdown button[type="submit"] {
-      background-color: #2e8b57;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      font-weight: bold;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    .login-dropdown button[type="submit"]:hover {
-      background-color: #246b45;
-    }
+.btn-hero-ghost {
+  display: inline-block;
+  border: 2px solid rgba(255,255,255,0.7);
+  color: white;
+  padding: 0.68rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transicao);
+}
+.btn-hero-ghost:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: white;
+}
 
-    .login-dropdown .create-account {
-      font-size: 0.9rem;
-      text-align: center;
-      color: #444;
-    }
-    .login-dropdown .create-account a {
-      color: #2e8b57;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .login-dropdown .create-account a:hover {
-      text-decoration: underline;
-    }
+.hero__scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.6);
+  font-size: 1.4rem;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
 
-    /* Hero banner */
-    .hero-banner {
-      background-image: url('https://www.cm-caminha.pt/thumbs/cmcaminha/uploads/writer_file/image/297/caminhos_de_santiago__1__1_1024_2500.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 80vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-    .hero-banner > div:first-child {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
-    .hero-banner > div:last-child {
-      position: relative;
-      z-index: 2;
-      font-family: sans-serif;
-    }
-    .hero-banner a {
-      background: white;
-      color: black;
-      padding: 0.5em 1em;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-      display: inline-block;
-    }
-    .hero-banner a:hover {
-      background: #ddd;
-    }
+/* ── DESTAQUES ── */
+.destaques {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 
-    /* Introdução */
-    section.introdução {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+.secao__sub {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 0.5rem;
+}
+body.dark .secao__sub { color: var(--ouro); }
 
-    /* Animações */
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-    }
-    section.informacoes-caminho > div {
-      opacity: 0;
-      animation-fill-mode: forwards;
-      transform: translateY(20px);
-      margin-bottom: 2rem;
-    }
+.destaques__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
 
-    /* Rodapé */
-    footer {
-      background: #fff;
-      padding: 40px 20px;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      color: #000;
-    }
-    footer h3, footer h4 {
-      margin-top: 0;
-    }
-    footer form input[type="email"] {
-      padding: 8px;
-      width: 300px;
-      max-width: 100%;
-      margin-right: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    footer form button {
-      padding: 8px 16px;
-      background: #000000;
-      color: #FFFFFF;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    footer ul {
-      list-style: none;
-      padding: 0;
-    }
-    footer ul li a {
-      text-decoration: none;
-      color: #000;
-    }
-    footer ul li a:hover {
-      text-decoration: underline;
-    }
-    footer .flex-container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    footer .flex-item {
-      flex: 1 1 300px;
-    }
-    footer .flex-item-small {
-      flex: 1 1 150px;
-    }
+.card-destaque {
+  background: var(--cinza-1);
+  border: 1.5px solid var(--cinza-2);
+  border-radius: 14px;
+  padding: 1.8rem 1.5rem;
+  display: block;
+  transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+}
+.card-destaque:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra);
+  border-color: var(--verde);
+}
 
-    /* Tema escuro no footer */
-    body.dark-theme footer {
-      background: #222;
-      color: #ccc;
-    }
-    body.dark-theme footer ul li a {
-      color: #ccc;
-    }
+.card-destaque__icone {
+  font-size: 2rem;
+  margin-bottom: 0.9rem;
+}
 
-    /* Links no conteúdo com tema escuro */
-    body.dark-theme a {
-      color: #000000;
-    }
+.card-destaque h3 {
+  font-size: 1.15rem;
+  color: var(--texto);
+  margin-bottom: 0.5rem;
+}
+
+.card-destaque p {
+  font-size: 0.87rem;
+  color: var(--texto-suave);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.card-destaque__link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--verde);
+}
+body.dark .card-destaque__link { color: var(--ouro); }
+
+/* ── ROTAS ── */
+.rotas {
+  background: var(--cinza-1);
+  border-top: 1px solid var(--cinza-2);
+  border-bottom: 1px solid var(--cinza-2);
+}
+
+.rotas__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.rota-card {
+  position: relative;
+  height: 340px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform var(--transicao);
+}
+.rota-card:hover { transform: scale(1.02); }
+
+.rota-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
+}
+
+.rota-card__info {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  padding: 1.5rem;
+  color: white;
+}
+
+.rota-card__tag {
+  display: inline-block;
+  background: var(--ouro);
+  color: #1a1a18;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  margin-bottom: 0.6rem;
+}
+
+.rota-card__info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.rota-card__info p {
+  font-size: 0.82rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* ── STATS ── */
+.stats {
+  background: var(--verde);
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.stat__num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--ouro);
+}
+
+.stat__label {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.3rem;
+}
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--ouro-claro);
+  border-top: 1px solid var(--cinza-2);
+}
+
+body.dark .cta-banner {
+  background: #2a2519;
+}
+
+.cta-banner__conteudo {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.cta-banner__conteudo h2 {
+  font-size: 2.2rem;
+  color: var(--verde-escuro);
+  margin-bottom: 0.75rem;
+}
+body.dark .cta-banner__conteudo h2 { color: var(--ouro); }
+
+.cta-banner__conteudo p {
+  color: var(--texto-suave);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .hero__botoes { flex-direction: column; }
+  .hero__titulo { font-size: 2.5rem; }
+}

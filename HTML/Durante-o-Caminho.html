@@ -2,88 +2,105 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Durante o Caminho - A Senda de Santiago</title>
-  <link rel="stylesheet" href="../CSS/main.css" />
-  <link rel="stylesheet" href="../css/Durante-o-Caminho.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Durante o Caminho — Senda</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
 </head>
 <body>
+
   <header class="navbar">
-    <a href="../index.html" class="logo">A Senda de Santiago</a>
-    <nav class="menu">
-  <a href="../index.html">Senda</a> 
-  
-  <a href="prepare-se.html">Prepare-se</a>
-  <a href="durante-o-caminho.html">Durante o Caminho</a>
-  <a href="santiago-e-galiza.html">Santiago e Galiza</a>
-  <a href="recomendacoes.html">Recomendações</a>
-  <a href="contacto.html">Contactos</a>
-</nav>
+    <a href="../index.html" class="navbar__logo">Senda</a>
+    <ul class="navbar__menu" id="navbar-menu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="Prepare-se.html">Prepare-se</a></li>
+      <li><a href="Durante-o-Caminho.html">Durante o Caminho</a></li>
+      <li><a href="Santiago-e-Galiza.html">Santiago e Galiza</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="contacto.html">Contactos</a></li>
+    </ul>
+    <div class="navbar__direita">
+      <button class="btn-tema" id="btn-tema" title="Alternar tema">🌙</button>
+      <div id="area-auth"></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-image-wrapper">
-      <img src="https://imagenes.elpais.com/resizer/v2/TVLZPVQ5QZB7QTOZTAOPRRKA2A.jpg?auth=7c243c64be2c85183b57019f4a1f866936e71ee830c2d4da9dfe7394dd8bad17&width=1960&height=1103&smart=true" alt="Caminho de Santiago" />
+  <section class="hero-pagina" style="background-image: url('https://imagenes.elpais.com/resizer/v2/TVLZPVQ5QZB7QTOZTAOPRRKA2A.jpg?auth=7c243c64be2c85183b57019f4a1f866936e71ee830c2d4da9dfe7394dd8bad17&width=1960&height=1103&smart=true')">
+    <div class="hero-pagina__texto">
       <h1>Durante o Caminho</h1>
+      <p>Dicas, rotinas e conselhos para cada etapa da jornada.</p>
     </div>
   </section>
 
-  <main>
-    <section class="conteudo">
-      <h2>Introdução</h2>
-      <p>
-        O Caminho de Santiago é uma das rotas de peregrinação mais antigas e emblemáticas da Europa...
-      </p>
+  <main class="pagina-conteudo">
 
-      <h2>O Percurso</h2>
-      <p>
-        O Caminho passa por diferentes regiões, cada uma com a sua beleza e características únicas...
-      </p>
+    <h2>A Rotina do Peregrino</h2>
+    <p>O Caminho de Santiago tem uma rotina que rapidamente se torna natural: acordar antes do amanhecer, caminhar pela manhã (quando o tempo é mais fresco), almoçar num café ou albergue, e chegar ao destino do dia a meio da tarde. Esta cadência permite descansar, tratar dos pés e socializar com outros peregrinos.</p>
 
-      <h2>Dicas para uma Experiência Inesquecível</h2>
-      <ul>
-        <li><strong>Planeie a sua rota:</strong> Conheça as etapas e adapte ao seu ritmo.</li>
-        <li><strong>Equipamento adequado:</strong> Use calçado confortável, roupas para chuva e proteção solar.</li>
-        <li><strong>Cuide do corpo:</strong> Alongue-se diariamente e hidrate-se regularmente.</li>
-        <li><strong>Respeite o ambiente:</strong> Não deixe lixo na natureza e respeite as comunidades locais.</li>
-        <li><strong>Descanse quando necessário:</strong> O Caminho é uma jornada, não uma corrida.</li>
-        <li><strong>Interaja com outros peregrinos:</strong> Partilhar histórias e experiências enriquece a caminhada.</li>
-      </ul>
+    <h2>As Etapas — Como Planear</h2>
+    <p>Não existe uma regra única. A maioria dos peregrinos percorre entre <strong>20 a 30 km por dia</strong>, mas pode e deve adaptar ao seu ritmo. Planeie com antecedência a dormida nas etapas mais movimentadas, especialmente na época alta (junho a setembro).</p>
+    <ul>
+      <li><strong>Etapas curtas (15–20 km):</strong> Ideais para principiantes ou para dias com chuva e terreno difícil.</li>
+      <li><strong>Etapas médias (20–28 km):</strong> O intervalo mais comum entre peregrinos experientes.</li>
+      <li><strong>Etapas longas (28+ km):</strong> Reserve para quando estiver bem adaptado e o terreno o permitir.</li>
+    </ul>
 
-      <h2>Pontos de Interesse</h2>
-      <p>Ao longo do Caminho, existem locais históricos e culturais que merecem uma visita:</p>
-      <ul>
-        <li><strong>Catedrais e igrejas:</strong> Muitos templos datam da Idade Média e guardam arte e arquitetura impressionantes.</li>
-        <li><strong>Albergues tradicionais:</strong> Locais onde pode descansar e conhecer outros peregrinos.</li>
-      </ul>
+    <h2>Dicas para uma Experiência Inesquecível</h2>
+    <ul>
+      <li>🌅 <strong>Comece cedo:</strong> As primeiras horas da manhã são as mais belas e frescas.</li>
+      <li>💧 <strong>Hidrate-se constantemente:</strong> Não espere ter sede para beber água.</li>
+      <li>🦶 <strong>Cuide dos pés:</strong> Trate bolhas imediatamente e mude de meias a meio do dia.</li>
+      <li>🧘 <strong>Descanse quando necessário:</strong> O Caminho é uma jornada, não uma corrida.</li>
+      <li>🗣️ <strong>Fale com outros peregrinos:</strong> As histórias partilhadas são parte da magia do Caminho.</li>
+      <li>📵 <strong>Desconecte-se:</strong> Guarde o telemóvel e observe a paisagem ao seu redor.</li>
+      <li>🌿 <strong>Respeite o ambiente:</strong> Não deixe lixo e respeite as comunidades locais.</li>
+    </ul>
 
-      <h2>Mapa do Percurso</h2>
-      <div class="map-placeholder">
-        <p>Mapa interativo do Caminho de Santiago - em breve com Google Maps API</p>
-      </div>
-    </section>
+    <h2>Albergues — O que Esperar</h2>
+    <p>Os albergues (ou "albergues de peregrinos") são o alojamento mais comum no Caminho. Funcionam em regime de dormitório, com beliches, casas de banho partilhadas e cozinha comum. O custo varia entre <strong>8 a 20€ por noite</strong>. Regra geral: chegue cedo para garantir cama, especialmente na época alta.</p>
+    <p>Existem também albergues privados e pensões para quem prefere mais privacidade, mas a experiência social dos albergues municipais é parte integrante do Caminho.</p>
+
+    <h2>Pontos de Interesse ao Longo do Caminho</h2>
+    <ul>
+      <li><strong>Catedrais e igrejas medievais</strong> — muitas com séculos de história e arte impressionante.</li>
+      <li><strong>Fontes e cruzeiros</strong> — marcos históricos que guiam o peregrino.</li>
+      <li><strong>Aldeias tradicionais</strong> — onde pode provar a gastronomia local e descansar.</li>
+      <li><strong>Miradouros</strong> — pontos de vista deslumbrantes que recompensam o esforço de subidas.</li>
+    </ul>
+
+    <h2>Mapa do Percurso</h2>
+    <div class="mapa-placeholder">
+      <span>🗺️</span>
+      Mapa interativo — em breve com integração Google Maps.
+    </div>
+
   </main>
 
-  <footer>
-    <div class="flex-container">
-      <div class="flex-item">
-        <h3>Contactos</h3>
-        <ul>
-          <li><a href="mailto:info@senda.com">info@senda.com</a></li>
-          <li><a href="tel:+351912345678">+351 990 000 000</a></li>
-        </ul>
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>Senda</h4>
+        <p>© 2025 Senda. Todos os direitos reservados.</p>
       </div>
-      <div class="flex-item">
-        <h4>Subscreva a Newsletter</h4>
-        <form>
-          <input type="email" placeholder="O seu email" required />
-          <button type="submit">Subscrever</button>
-        </form>
+      <div class="footer__col">
+        <h4>Explorar</h4>
+        <a href="../index.html">Início</a>
+        <a href="Prepare-se.html">Prepare-se</a>
+        <a href="Santiago-e-Galiza.html">Santiago e Galiza</a>
+        <a href="recomendacoes.html">Recomendações</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <a href="mailto:info@senda.pt">info@senda.pt</a>
+        <a href="contacto.html">Formulário de contacto</a>
       </div>
     </div>
-    <p style="text-align:center; margin-top: 1rem;">© 2025 Senda. Todos os direitos reservados.</p>
+    <p class="footer__copy">Feito com ❤️ para os peregrinos do mundo inteiro.</p>
   </footer>
 
-  <script src="../js/views/dia-noite.js"></script>
+  <script src="../js/global.js"></script>
 </body>
 </html>

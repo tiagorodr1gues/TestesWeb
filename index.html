@@ -1,41 +1,190 @@
 <!DOCTYPE html>
-<html lang="pt"> <head>
+<html lang="pt">
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Senda - Caminho de Santiago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senda — Caminho de Santiago</title>
+  <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-  <header class="navbar">
-  <a href="index.html" class="logo">Senda</a>
-  
-  <nav class="menu">
-    <a href="HTML/Prepare-se.html">Prepare-se</a>
-    <a href="HTML/Durante-o-Caminho.html">Durante o Caminho</a>
-    <a href="HTML/Santiago-e-Galiza.html">Santiago e Galiza</a>
-    <a href="HTML/recomendacoes.html">Recomendações</a>
-    <a href="HTML/contacto.html">Contactos</a>
-  </nav>
 
-  <div class="top-right-buttons">
-    <button id="theme-toggle" aria-label="Alternar tema">🌑</button>
-    <button id="login-btn" class="login-button">Entrar</button>
-    
-    <div id="login-dropdown" class="login-dropdown">
-      <form id="login-form">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required />
-        <button type="submit">Entrar</button>
-      </form>
-      <div class="create-account">
-        <p>Não tem conta? <a href="HTML/criar-conta.html">Crie uma aqui</a></p>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="navbar__logo">Senda</a>
+    <ul class="navbar__menu" id="navbar-menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="HTML/Prepare-se.html">Prepare-se</a></li>
+      <li><a href="HTML/Durante-o-Caminho.html">Durante o Caminho</a></li>
+      <li><a href="HTML/Santiago-e-Galiza.html">Santiago e Galiza</a></li>
+      <li><a href="HTML/recomendacoes.html">Recomendações</a></li>
+      <li><a href="HTML/contacto.html">Contactos</a></li>
+    </ul>
+    <div class="navbar__direita">
+      <button class="btn-tema" id="btn-tema" title="Alternar tema">🌙</button>
+      <div id="area-auth"></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__conteudo">
+      <span class="hero__tag">Guia do Peregrino</span>
+      <h1 class="hero__titulo">O Caminho<br>começa aqui.</h1>
+      <p class="hero__sub">Descubra rotas, dicas e inspiração para a peregrinação mais icónica da Europa.</p>
+      <div class="hero__botoes">
+        <a href="HTML/Prepare-se.html" class="btn-primario">Começar a preparar</a>
+        <a href="HTML/Santiago-e-Galiza.html" class="btn-hero-ghost">Conhecer o destino</a>
       </div>
     </div>
-  </div>
-</header>
+    <div class="hero__scroll">
+      <span>↓</span>
+    </div>
+  </section>
 
-  <script src="js/views/dia-noite.js"></script>
+  <!-- DESTAQUES -->
+  <section class="destaques secao">
+    <p class="secao__sub">O que encontra no Senda</p>
+    <h2 class="secao__titulo">Tudo o que precisa para o Caminho</h2>
+    <div class="destaques__grid">
+      <a href="HTML/Prepare-se.html" class="card-destaque">
+        <div class="card-destaque__icone">🥾</div>
+        <h3>Prepare-se</h3>
+        <p>Equipamento, treino físico e o que levar na mochila para uma jornada segura.</p>
+        <span class="card-destaque__link">Ver mais →</span>
+      </a>
+      <a href="HTML/Durante-o-Caminho.html" class="card-destaque">
+        <div class="card-destaque__icone">🗺️</div>
+        <h3>Durante o Caminho</h3>
+        <p>Rotas, etapas, dicas de percurso e como aproveitar cada momento da caminhada.</p>
+        <span class="card-destaque__link">Ver mais →</span>
+      </a>
+      <a href="HTML/Santiago-e-Galiza.html" class="card-destaque">
+        <div class="card-destaque__icone">⛪</div>
+        <h3>Santiago e a Galiza</h3>
+        <p>A história, as lendas, a cultura e a beleza do destino final de tantos peregrinos.</p>
+        <span class="card-destaque__link">Ver mais →</span>
+      </a>
+      <a href="HTML/recomendacoes.html" class="card-destaque">
+        <div class="card-destaque__icone">💡</div>
+        <h3>Recomendações</h3>
+        <p>Conselhos práticos de alimentação, hidratação, segurança e muito mais.</p>
+        <span class="card-destaque__link">Ver mais →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ROTAS DESTAQUE -->
+  <section class="rotas">
+    <div class="secao">
+      <p class="secao__sub">As rotas mais percorridas</p>
+      <h2 class="secao__titulo">Escolha o seu Caminho</h2>
+      <div class="rotas__grid">
+        <div class="rota-card" style="background-image: url('https://www.cm-caminha.pt/thumbs/cmcaminha/uploads/writer_file/image/297/caminhos_de_santiago__1__1_1024_2500.jpg')">
+          <div class="rota-card__overlay"></div>
+          <div class="rota-card__info">
+            <span class="rota-card__tag">Mais popular</span>
+            <h3>Caminho Português</h3>
+            <p>De Lisboa ou Porto até Santiago, passando por paisagens únicas do Minho.</p>
+          </div>
+        </div>
+        <div class="rota-card" style="background-image: url('https://imagenes.elpais.com/resizer/v2/TVLZPVQ5QZB7QTOZTAOPRRKA2A.jpg?auth=7c243c64be2c85183b57019f4a1f866936e71ee830c2d4da9dfe7394dd8bad17&width=1960&height=1103&smart=true')">
+          <div class="rota-card__overlay"></div>
+          <div class="rota-card__info">
+            <span class="rota-card__tag">Clássico</span>
+            <h3>Caminho Francês</h3>
+            <p>A rota mais cosmopolita, partindo dos Pirenéus e atravessando o norte de Espanha.</p>
+          </div>
+        </div>
+        <div class="rota-card" style="background-image: url('https://wp.en.aleteia.org/wp-content/uploads/sites/2/2021/01/WEB3-CAMINO-DE-SANTIAGO-shutterstock_725394601-Martin-Schuetz.jpg?w=720')">
+          <div class="rota-card__overlay"></div>
+          <div class="rota-card__info">
+            <span class="rota-card__tag">Histórico</span>
+            <h3>Caminho Primitivo</h3>
+            <p>A rota original, partindo de Oviedo, a mais desafiante e contemplativa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTATÍSTICAS -->
+  <section class="stats">
+    <div class="stats__grid secao">
+      <div class="stat">
+        <span class="stat__num">500 km+</span>
+        <span class="stat__label">Caminho Português</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">350 mil</span>
+        <span class="stat__label">Peregrinos por ano</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">+1.200</span>
+        <span class="stat__label">Anos de história</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">10+</span>
+        <span class="stat__label">Rotas oficiais</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="cta-banner__conteudo">
+      <h2>Pronto para começar?</h2>
+      <p>Crie uma conta gratuita e guarde as suas rotas, notas e progresso.</p>
+      <a href="HTML/criar-conta.html" class="btn-primario" id="cta-btn">Criar conta gratuita</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>Senda</h4>
+        <p>O guia digital do peregrino moderno.</p>
+        <p style="margin-top:0.5rem">© 2025 Senda. Todos os direitos reservados.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Explorar</h4>
+        <a href="HTML/Prepare-se.html">Prepare-se</a>
+        <a href="HTML/Durante-o-Caminho.html">Durante o Caminho</a>
+        <a href="HTML/Santiago-e-Galiza.html">Santiago e Galiza</a>
+        <a href="HTML/recomendacoes.html">Recomendações</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <a href="mailto:info@senda.pt">info@senda.pt</a>
+        <a href="tel:+351990000000">+351 990 000 000</a>
+        <a href="HTML/contacto.html">Formulário de contacto</a>
+      </div>
+      <div class="footer__col">
+        <h4>Newsletter</h4>
+        <p>Receba dicas e novidades sobre o Caminho.</p>
+        <form class="footer__newsletter" onsubmit="return false">
+          <input type="email" placeholder="o.seu@email.pt" />
+          <button type="submit">→</button>
+        </form>
+      </div>
+    </div>
+    <p class="footer__copy">Feito com ❤️ para os peregrinos do mundo inteiro.</p>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script>
+    // Esconder CTA se já estiver logado
+    document.addEventListener('DOMContentLoaded', () => {
+      if (Auth.isLoggedIn()) {
+        const cta = document.getElementById('cta-btn');
+        if (cta) { cta.textContent = 'O meu perfil'; cta.href = '#'; }
+      }
+    });
+  </script>
 </body>
 </html>

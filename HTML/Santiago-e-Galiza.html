@@ -2,98 +2,108 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Santiago e a Galiza - A Senda de Santiago</title>
-  <link rel="stylesheet" href="../css/santiago-galiza.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santiago e a Galiza — Senda</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
 </head>
+<body>
 
-<header class="navbar">
-  <a href="../index.html" class="logo">A Senda de Santiago</a>
- <nav class="menu">
-  <a href="../index.html">Senda</a> 
-  
-  <a href="prepare-se.html">Prepare-se</a>
-  <a href="durante-o-caminho.html">Durante o Caminho</a>
-  <a href="santiago-e-galiza.html">Santiago e Galiza</a>
-  <a href="recomendacoes.html">Recomendações</a>
-  <a href="contacto.html">Contactos</a>
-</nav>
-</header>
-  <section class="hero">
-    <h1>Santiago e a Galiza</h1>
+  <header class="navbar">
+    <a href="../index.html" class="navbar__logo">Senda</a>
+    <ul class="navbar__menu" id="navbar-menu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="Prepare-se.html">Prepare-se</a></li>
+      <li><a href="Durante-o-Caminho.html">Durante o Caminho</a></li>
+      <li><a href="Santiago-e-Galiza.html">Santiago e Galiza</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="contacto.html">Contactos</a></li>
+    </ul>
+    <div class="navbar__direita">
+      <button class="btn-tema" id="btn-tema" title="Alternar tema">🌙</button>
+      <div id="area-auth"></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero-pagina" style="background-image: url('https://turisver.pt/wp-content/uploads/2022/05/Santiago-de-Compostela-largo.jpg')">
+    <div class="hero-pagina__texto">
+      <h1>Santiago e a Galiza</h1>
+      <p>A história, a lenda e a beleza do destino final.</p>
+    </div>
   </section>
 
-  <main class="content">
-    <section class="historia">
-      <h2>🌟 A Lenda de Santiago</h2>
-      <p>
-        Acredita-se que os restos mortais do apóstolo Tiago repousam em Santiago de Compostela.
-        A cidade tornou-se um dos maiores centros de peregrinação cristã desde o século IX.
-      </p>
-      <img src="https://buencamino.com.br/wp-content/uploads/2020/11/Santiago-y-San-Juan-Apostoles_-hijos-de-Zebedeo_-Maestro-de-la-Ventosilla_Museo-de-las-Peregrinaciones.jpg" alt="Representação do Apóstolo Santiago" />
-    </section>
+  <main class="pagina-conteudo">
 
-    <section class="curiosidades">
-      <h2>🔍 Curiosidades do Caminho</h2>
-      <ul>
-        <li><strong>Concha de Vieira:</strong> Símbolo do peregrino e guia no caminho.</li>
-        <li><strong>Setas Amarelas:</strong> Indicam o trajeto correto até Santiago.</li>
-        <li><strong>A Compostela:</strong> Certificado dado aos que concluem o percurso.</li>
-      </ul>
-      <img src="https://wp.en.aleteia.org/wp-content/uploads/sites/2/2021/01/WEB3-CAMINO-DE-SANTIAGO-shutterstock_725394601-Martin-Schuetz.jpg?w=720" alt="Símbolo da concha no caminho" />
-    </section>
+    <h2>🌟 A Lenda de Santiago</h2>
+    <p>Acredita-se que os restos mortais do apóstolo Tiago repousam em Santiago de Compostela. A cidade tornou-se um dos maiores centros de peregrinação cristã desde o século IX, quando o eremita Paio observou misteriosas luzes sobre o bosque de Libredón e o bispo Teodomiro confirmou a descoberta do túmulo.</p>
+    <img class="img-destaque" src="https://buencamino.com.br/wp-content/uploads/2020/11/Santiago-y-San-Juan-Apostoles_-hijos-de-Zebedeo_-Maestro-de-la-Ventosilla_Museo-de-las-Peregrinaciones.jpg" alt="Representação do Apóstolo Santiago" />
 
-    <section class="galiza">
-      <h2>🌄 A Beleza da Galiza</h2>
-      <p>
-        A Galiza encanta com sua natureza exuberante, gastronomia rica, tradições celtas e hospitalidade.
-        É o cenário perfeito para fechar com chave de ouro o Caminho de Santiago.
-      </p>
-      <img src="https://www.vagamundos.pt/wp-content/uploads/2021/03/1-113.jpg" alt="Paisagem típica da Galiza" />
-    </section>
+    <h2>📅 História da Peregrinação</h2>
 
-    <section class="galeria">
-      <h2>📸 Galeria</h2>
-      <div class="galeria-grid">
-        <img src="https://iremviagem.com/wp-content/uploads/2023/01/Costa-Galiza-4-1024x674.jpg" alt="Costa da Galiza" />
-        <img src="https://turisver.pt/wp-content/uploads/2022/05/Santiago-de-Compostela-largo.jpg" alt="Catedral ao longe" />
-        <img src="https://cdn-images.rtp.pt/arquivo/2018/02/compostela.png?crop=top&fit=crop&h=461&ixlib=php-1.1.0&w=860" alt="Certificado Compostela" />
-      </div>
-    </section>
+    <div class="info-card">
+      <strong>A descoberta do túmulo (~820 d.C.)</strong>
+      <p style="margin-top:0.4rem">O eremita Paio viu luzes misteriosas sobre um bosque. O achado, confirmado pelo bispo Teodomiro, levou à construção da primeira ermida que daria origem à magnífica Catedral.</p>
+    </div>
 
-    <section class="texto-historico">
-      <h2>A descoberta do túmulo (ano 820)</h2>
-      <p>Por volta do ano 820, o eremita Paio observou misteriosas luzes sobre o bosque de Libredón. Este achado, confirmado pelo bispo Teodomiro, deu origem à Catedral e à cidade que hoje conhecemos.</p>
-      
-      <h2>O apogeu das peregrinações</h2>
-      <p>Entre os séculos XI e XIII, Santiago afirmou-se como um dos maiores destinos da cristandade. Figuras como São Francisco de Assis (1214) ajudaram a consolidar a rota como um eixo espiritual da Europa.</p>
-      
-      <h2>O Caminho hoje (Século XXI)</h2>
-      <p>Atualmente, o Caminho atrai pessoas de todas as crenças. É uma experiência de introspeção, contacto com a natureza e partilha humana que ultrapassa a vertente puramente religiosa.</p>
-    </section>
+    <div class="info-card">
+      <strong>O apogeu medieval (Séc. XI–XIII)</strong>
+      <p style="margin-top:0.4rem">Santiago afirmou-se como um dos maiores destinos da cristandade. Figuras como São Francisco de Assis (1214) ajudaram a consolidar a rota como um eixo espiritual da Europa. O <em>Codex Calixtinus</em>, o primeiro guia de viagem da história, foi escrito neste período.</p>
+    </div>
+
+    <div class="info-card">
+      <strong>O Caminho no séc. XXI</strong>
+      <p style="margin-top:0.4rem">Hoje, mais de 350 mil peregrinos chegam a Santiago por ano. O Caminho atrai pessoas de todas as crenças e países — é uma experiência de introspeção, contacto com a natureza e partilha humana que transcende a vertente religiosa.</p>
+    </div>
+
+    <h2>🔍 Curiosidades Essenciais</h2>
+    <ul>
+      <li><strong>Concha de Vieira:</strong> Símbolo universal do peregrino — o motivo que guia e identifica desde a Idade Média.</li>
+      <li><strong>Setas Amarelas:</strong> Pintadas pelo padre Elías Valiña na década de 1980 para retraçar o Caminho Francês. Hoje estão em toda a Europa.</li>
+      <li><strong>O Botafumeiro:</strong> O gigantesco incensário da Catedral, que pesa 53 kg — um espetáculo inesquecível nas missas do peregrino.</li>
+      <li><strong>A Compostela:</strong> O certificado em latim entregue a quem completa pelo menos 100 km a pé ou 200 km de bicicleta.</li>
+      <li><strong>Ano Santo Compostelano:</strong> Quando o dia de Santiago (25 de julho) cai num domingo — o número de peregrinos duplica.</li>
+    </ul>
+
+    <img class="img-destaque" src="https://wp.en.aleteia.org/wp-content/uploads/sites/2/2021/01/WEB3-CAMINO-DE-SANTIAGO-shutterstock_725394601-Martin-Schuetz.jpg?w=720" alt="Símbolo da concha no caminho" />
+
+    <h2>🌄 A Beleza da Galiza</h2>
+    <p>A Galiza encanta com a sua natureza exuberante, gastronomia rica, tradições celtas e hospitalidade única. É o cenário perfeito para fechar com chave de ouro o Caminho de Santiago.</p>
+    <p>Não parta sem provar o <strong>polvo à feira</strong>, o <strong>caldo galego</strong>, a <strong>Tarta de Santiago</strong> e um copo de <strong>Albariño</strong>. A gastronomia galega é Património Imaterial da Humanidade a merecer ser reconhecido.</p>
+
+    <h2>📸 Galeria</h2>
+    <div class="galeria-grid">
+      <img src="https://iremviagem.com/wp-content/uploads/2023/01/Costa-Galiza-4-1024x674.jpg" alt="Costa da Galiza" />
+      <img src="https://turisver.pt/wp-content/uploads/2022/05/Santiago-de-Compostela-largo.jpg" alt="Catedral ao longe" />
+      <img src="https://www.vagamundos.pt/wp-content/uploads/2021/03/1-113.jpg" alt="Paisagem da Galiza" />
+    </div>
+
   </main>
 
   <footer class="footer">
-    <div class="flex-container">
-      <div class="flex-item">
-        <h3>Contactos</h3>
-        <ul>
-          <li><a href="mailto:info@senda.com">info@senda.com</a></li>
-          <li><a href="tel:+351912345678">+351 990 000 000</a></li>
-        </ul>
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>Senda</h4>
+        <p>© 2025 Senda. Todos os direitos reservados.</p>
       </div>
-      <div class="flex-item">
-        <h4>Subscreva a Newsletter</h4>
-        <form>
-          <input type="email" placeholder="O seu email" required />
-          <button type="submit">Subscrever</button>
-        </form>
+      <div class="footer__col">
+        <h4>Explorar</h4>
+        <a href="../index.html">Início</a>
+        <a href="Prepare-se.html">Prepare-se</a>
+        <a href="Durante-o-Caminho.html">Durante o Caminho</a>
+        <a href="recomendacoes.html">Recomendações</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <a href="mailto:info@senda.pt">info@senda.pt</a>
+        <a href="contacto.html">Formulário de contacto</a>
       </div>
     </div>
-    <p style="text-align:center; margin-top: 1rem;">© 2025 Senda. Todos os direitos reservados.</p>
+    <p class="footer__copy">Feito com ❤️ para os peregrinos do mundo inteiro.</p>
   </footer>
 
-  <script src="../js/views/dia-noite.js"></script>
+  <script src="../js/global.js"></script>
 </body>
 </html>

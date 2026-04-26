@@ -1,104 +1,259 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel Admin - Senda</title>
-  <link rel="stylesheet" href="../CSS/criar-conta-admin.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Admin — Senda</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <style>
+    .admin-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .admin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .admin-header h1 { font-size: 1.8rem; color: var(--verde-escuro); }
+    body.dark .admin-header h1 { color: #7dc99a; }
+
+    .admin-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat-card {
+      background: var(--cinza-1);
+      border: 1.5px solid var(--cinza-2);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+    }
+    .stat-card__num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--verde);
+    }
+    body.dark .stat-card__num { color: var(--ouro); }
+    .stat-card__label { font-size: 0.82rem; color: var(--texto-suave); margin-top: 0.2rem; }
+
+    .tabela-wrap {
+      background: var(--cinza-1);
+      border: 1.5px solid var(--cinza-2);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .tabela-titulo {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--cinza-2);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--texto);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    thead th {
+      text-align: left;
+      padding: 0.75rem 1.2rem;
+      background: var(--cinza-2);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--texto-suave);
+      font-weight: 600;
+    }
+    tbody tr {
+      border-bottom: 1px solid var(--cinza-2);
+      transition: background var(--transicao);
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--cinza-2); }
+    td { padding: 0.9rem 1.2rem; color: var(--texto); vertical-align: middle; }
+
+    .badge-admin { background: #e8f5ee; color: var(--verde-escuro); }
+    .badge-user  { background: var(--cinza-2); color: var(--texto-suave); }
+    body.dark .badge-admin { background: #1a3326; color: #7dc99a; }
+    body.dark .badge-user  { background: var(--cinza-2); }
+
+    .btn-apagar {
+      background: #fde8e8;
+      color: #c0392b;
+      border: none;
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transicao);
+    }
+    .btn-apagar:hover { background: #f5b8b8; }
+    body.dark .btn-apagar { background: #3a1515; color: #f59090; }
+
+    .btn-admin-toggle {
+      background: var(--verde-claro);
+      color: var(--verde-escuro);
+      border: none;
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transicao);
+    }
+    .btn-admin-toggle:hover { background: #c5e8d5; }
+
+    .acesso-negado {
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .acesso-negado h2 { color: var(--verde-escuro); margin-bottom: 1rem; }
+    body.dark .acesso-negado h2 { color: var(--ouro); }
+
+    @media (max-width: 640px) {
+      td:nth-child(3), th:nth-child(3) { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-    <a href="../index.html" class="logo">Senda</a>
-  <nav class="menu">
-  <a href="../index.html">Senda</a> 
-  
-  <a href="prepare-se.html">Prepare-se</a>
-  <a href="durante-o-caminho.html">Durante o Caminho</a>
-  <a href="santiago-e-galiza.html">Santiago e Galiza</a>
-  <a href="recomendacoes.html">Recomendações</a>
-  <a href="contacto.html">Contactos</a>
-</nav>
 
-    <div class="top-right-buttons">
-      <button id="logout-btn" class="login-button">Logout</button>
-      <button id="theme-toggle" aria-label="Alternar tema">🌑</button>
+  <header class="navbar">
+    <a href="../index.html" class="navbar__logo">Senda</a>
+    <ul class="navbar__menu" id="navbar-menu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="Prepare-se.html">Prepare-se</a></li>
+      <li><a href="Durante-o-Caminho.html">Durante o Caminho</a></li>
+      <li><a href="Santiago-e-Galiza.html">Santiago e Galiza</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="contacto.html">Contactos</a></li>
+    </ul>
+    <div class="navbar__direita">
+      <button class="btn-tema" id="btn-tema" title="Alternar tema">🌙</button>
+      <div id="area-auth"></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <section class="admin-container">
-    <h1>Painel de Administração</h1>
-    <button class="logout-btn" id="logout-btn-top">Logout</button>
-    <table>
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Email</th>
-          <th>Admin</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody id="user-table-body">
-        </tbody>
-    </table>
-  </section>
+  <div id="conteudo-admin"></div>
 
+  <script src="../js/global.js"></script>
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('conteudo-admin');
 
-    function updateThemeIcon() {
-      themeToggle.textContent = body.classList.contains('dark-theme') ? '☀️' : '🌑';
-    }
+      if (!Auth.isLoggedIn() || !Auth.isAdmin()) {
+        container.innerHTML = `
+          <div class="acesso-negado">
+            <h2>⛔ Acesso Restrito</h2>
+            <p style="color:var(--texto-suave); margin-bottom:1.5rem">Esta página é apenas para administradores.</p>
+            <a href="../index.html" class="btn-primario">Voltar ao início</a>
+          </div>
+        `;
+        return;
+      }
 
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-theme');
-      updateThemeIcon();
+      renderAdmin();
     });
 
-    updateThemeIcon();
+    function renderAdmin() {
+      const container = document.getElementById('conteudo-admin');
+      const users = Auth.getUsers();
+      const session = Auth.getSession();
+      const admins = users.filter(u => u.admin).length;
 
-    let users = [
-      { id: 1, name: 'João Silva', email: 'joao@email.com', isAdmin: true },
-      { id: 2, name: 'Maria Santos', email: 'maria@email.com', isAdmin: false },
-      { id: 3, name: 'Pedro Costa', email: 'pedro@email.com', isAdmin: false },
-    ];
+      container.innerHTML = `
+        <div class="admin-wrap">
+          <div class="admin-header">
+            <h1>⚙️ Painel de Administração</h1>
+            <span style="font-size:0.85rem; color:var(--texto-suave)">Bem-vindo, ${session.nome}</span>
+          </div>
 
-    const userTableBody = document.getElementById('user-table-body');
+          <div class="admin-stats">
+            <div class="stat-card">
+              <div class="stat-card__num">${users.length}</div>
+              <div class="stat-card__label">Utilizadores registados</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__num">${admins}</div>
+              <div class="stat-card__label">Administradores</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__num">${users.length - admins}</div>
+              <div class="stat-card__label">Utilizadores normais</div>
+            </div>
+          </div>
 
-    function renderUsers() {
-      userTableBody.innerHTML = '';
-      users.forEach(user => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${user.name}</td>
-          <td>${user.email}</td>
-          <td>${user.isAdmin ? 'Sim' : 'Não'}</td>
-          <td>
-            <button class="delete-btn" data-id="${user.id}">Excluir</button>
-          </td>
-        `;
-        userTableBody.appendChild(tr);
-      });
+          <div class="tabela-wrap">
+            <div class="tabela-titulo">👥 Gestão de Utilizadores</div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Membro desde</th>
+                  <th>Papel</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-users">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
 
-      document.querySelectorAll('.delete-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-          const id = parseInt(e.target.dataset.id);
-          users = users.filter(u => u.id !== id);
-          renderUsers();
-        });
-      });
+      renderTabela();
     }
 
-    renderUsers();
+    function renderTabela() {
+      const tbody = document.getElementById('tabela-users');
+      const users = Auth.getUsers();
+      const session = Auth.getSession();
 
-    // CORREÇÃO: Logout redireciona para a raiz
-    const handleLogout = () => {
-      alert('Logout efetuado!');
-      window.location.href = '../index.html';
-    };
+      tbody.innerHTML = users.map(u => `
+        <tr>
+          <td><strong>${u.nome}</strong>${u.id === session.id ? ' <span style="font-size:0.75rem;color:var(--verde)">(você)</span>' : ''}</td>
+          <td>${u.email}</td>
+          <td>${new Date(u.data).toLocaleDateString('pt-PT')}</td>
+          <td><span class="badge ${u.admin ? 'badge-admin' : 'badge-user'}">${u.admin ? '⚙️ Admin' : '👤 Utilizador'}</span></td>
+          <td style="display:flex;gap:0.5rem;flex-wrap:wrap">
+            ${u.id !== session.id ? `
+              <button class="btn-admin-toggle" onclick="toggleAdmin(${u.id})">${u.admin ? 'Remover admin' : 'Tornar admin'}</button>
+              <button class="btn-apagar" onclick="apagarUser(${u.id})">Apagar</button>
+            ` : '<span style="font-size:0.8rem;color:var(--cinza-3)">—</span>'}
+          </td>
+        </tr>
+      `).join('');
+    }
 
-    document.getElementById('logout-btn').addEventListener('click', handleLogout);
-    document.getElementById('logout-btn-top').addEventListener('click', handleLogout);
+    function toggleAdmin(id) {
+      const users = Auth.getUsers();
+      const idx = users.findIndex(u => u.id === id);
+      if (idx === -1) return;
+      users[idx].admin = !users[idx].admin;
+      Auth.saveUsers(users);
+      renderTabela();
+    }
+
+    function apagarUser(id) {
+      if (!confirm('Tem a certeza que quer apagar este utilizador?')) return;
+      const users = Auth.getUsers().filter(u => u.id !== id);
+      Auth.saveUsers(users);
+      renderTabela();
+      // Atualizar stats
+      document.querySelector('.stat-card__num').textContent = Auth.getUsers().length;
+    }
   </script>
 </body>
 </html>

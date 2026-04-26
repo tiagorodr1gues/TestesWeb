@@ -2,49 +2,155 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Criar Conta - Senda</title>
-  <link rel="stylesheet" href="../css/criar-conta.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Conta — Senda</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <style>
+    .auth-wrap {
+      min-height: calc(100vh - var(--navbar-h));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cinza-1);
+      padding: 2rem 1rem;
+    }
+    .auth-card {
+      background: var(--branco);
+      border: 1.5px solid var(--cinza-2);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: var(--sombra);
+    }
+    .auth-card__logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--verde);
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+    .auth-card__sub {
+      text-align: center;
+      color: var(--texto-suave);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .auth-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: var(--texto);
+    }
+    .auth-link {
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--texto-suave);
+      margin-top: 1.2rem;
+    }
+    .auth-link a { color: var(--verde); font-weight: 600; }
+    .auth-link a:hover { text-decoration: underline; }
+    .req-senha {
+      font-size: 0.78rem;
+      color: var(--cinza-3);
+      margin-top: -0.6rem;
+      margin-bottom: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-  <a href="../index.html" class="logo">Senda</a>
- <nav class="menu">
-  <a href="../index.html">Senda</a> 
-  
-  <a href="prepare-se.html">Prepare-se</a>
-  <a href="durante-o-caminho.html">Durante o Caminho</a>
-  <a href="santiago-e-galiza.html">Santiago e Galiza</a>
-  <a href="recomendacoes.html">Recomendações</a>
-  <a href="contacto.html">Contactos</a>
-</nav>
-  <button onclick="location.href='admin.html'">Acesso Admin</button>
-</header>
 
-    <button onclick="location.href='criar-conta-admin.html'">Acesso Admin</button>
+  <header class="navbar">
+    <a href="../index.html" class="navbar__logo">Senda</a>
+    <ul class="navbar__menu" id="navbar-menu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="Prepare-se.html">Prepare-se</a></li>
+      <li><a href="Durante-o-Caminho.html">Durante o Caminho</a></li>
+      <li><a href="Santiago-e-Galiza.html">Santiago e Galiza</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="contacto.html">Contactos</a></li>
+    </ul>
+    <div class="navbar__direita">
+      <button class="btn-tema" id="btn-tema" title="Alternar tema">🌙</button>
+      <div id="area-auth"></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <main>
-    <section class="form-criar-conta" style="max-width: 600px; margin: 2rem auto;">
-      <h2>Criar Conta</h2>
-      <form action="#" method="POST" id="create-account-form">
-        <label for="username">Nome de Utilizador:</label>
-        <input type="text" id="username" name="username" required />
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <div class="auth-card__logo">Senda</div>
+      <p class="auth-card__sub">O guia do peregrino moderno</p>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+      <h2>Criar conta gratuita</h2>
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required />
-
-        <label for="confirm-password">Confirmar Senha:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required />
-
-        <button type="submit" style="margin-top: 1rem;">Criar Conta</button>
+      <form id="form-registo">
+        <div class="form-grupo">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" placeholder="João Silva" required />
+        </div>
+        <div class="form-grupo">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="joao@email.pt" required />
+        </div>
+        <div class="form-grupo">
+          <label for="password">Senha</label>
+          <input type="password" id="password" placeholder="Mínimo 6 caracteres" required minlength="6" />
+        </div>
+        <p class="req-senha">A senha deve ter pelo menos 6 caracteres.</p>
+        <div class="form-grupo">
+          <label for="confirmar">Confirmar senha</label>
+          <input type="password" id="confirmar" placeholder="Repita a senha" required />
+        </div>
+        <div class="form-msg" id="registo-msg"></div>
+        <button type="submit" class="btn-primario" style="width:100%; margin-top:0.5rem">Criar conta</button>
       </form>
 
-      <p>Já tem uma conta? <a href="../index.html">Entrar</a></p>
-    </section>
-  </main>
+      <p class="auth-link">Já tem conta? <a href="../index.html">Entre aqui</a></p>
+    </div>
+  </div>
+
+  <script src="../js/global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Se já está logado, redirecionar
+      if (Auth.isLoggedIn()) {
+        window.location.href = '../index.html';
+        return;
+      }
+
+      document.getElementById('form-registo').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nome     = document.getElementById('nome').value.trim();
+        const email    = document.getElementById('email').value.trim();
+        const pass     = document.getElementById('password').value;
+        const confirmar = document.getElementById('confirmar').value;
+        const msg      = document.getElementById('registo-msg');
+
+        if (pass !== confirmar) {
+          msg.textContent = '❌ As senhas não coincidem.';
+          msg.className = 'form-msg erro';
+          msg.style.display = 'block';
+          return;
+        }
+
+        const res = Auth.register(nome, email, pass);
+        if (res.ok) {
+          Auth.setSession(res.user);
+          msg.textContent = '✅ Conta criada com sucesso! A redirecionar...';
+          msg.className = 'form-msg sucesso';
+          msg.style.display = 'block';
+          setTimeout(() => { window.location.href = '../index.html'; }, 1200);
+        } else {
+          msg.textContent = '❌ ' + res.erro;
+          msg.className = 'form-msg erro';
+          msg.style.display = 'block';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

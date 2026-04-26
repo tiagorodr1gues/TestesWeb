@@ -2,48 +2,136 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto - Senda</title>
-  <link rel="stylesheet" href="../css/contacto.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Senda</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <style>
+    .contacto-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contacto-info h2 { font-size: 1.65rem; color: var(--verde-escuro); margin-bottom: 1rem; }
+    body.dark .contacto-info h2 { color: #7dc99a; }
+    .contacto-info p { color: var(--texto-suave); line-height: 1.7; margin-bottom: 1rem; }
+    .contacto-detalhe { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.8rem; color: var(--texto-suave); font-size: 0.95rem; }
+    .contacto-detalhe span:first-child { font-size: 1.3rem; }
+    .contacto-detalhe a { color: var(--verde); }
+    body.dark .contacto-detalhe a { color: var(--ouro); }
+    .form-card {
+      background: var(--cinza-1);
+      border: 1.5px solid var(--cinza-2);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+    .form-card h3 { font-size: 1.2rem; margin-bottom: 1.4rem; color: var(--texto); }
+    @media (max-width: 640px) { .contacto-wrap { grid-template-columns: 1fr; gap: 2rem; } }
+  </style>
 </head>
 <body>
 
   <header class="navbar">
-    <a href="../index.html" class="logo">A Senda de Santiago</a>
-   <nav class="menu">
-  <a href="../index.html">Senda</a> 
-  
-  <a href="prepare-se.html">Prepare-se</a>
-  <a href="durante-o-caminho.html">Durante o Caminho</a>
-  <a href="santiago-e-galiza.html">Santiago e Galiza</a>
-  <a href="recomendacoes.html">Recomendações</a>
-  <a href="contacto.html">Contactos</a>
-</nav>
-
-    <div class="top-right-buttons">
-      <button id="theme-toggle" aria-label="Alternar tema">🌑</button>
+    <a href="../index.html" class="navbar__logo">Senda</a>
+    <ul class="navbar__menu" id="navbar-menu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="Prepare-se.html">Prepare-se</a></li>
+      <li><a href="Durante-o-Caminho.html">Durante o Caminho</a></li>
+      <li><a href="Santiago-e-Galiza.html">Santiago e Galiza</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="contacto.html">Contactos</a></li>
+    </ul>
+    <div class="navbar__direita">
+      <button class="btn-tema" id="btn-tema" title="Alternar tema">🌙</button>
+      <div id="area-auth"></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <section id="contacto">
-    <h1>Caso precises não penses duas vezes, entra em contacto!</h1>
-    <p>Se tiveres alguma dúvida, podes entrar em contacto por aqui.</p>
-    <form
-      id="contactForm"
-      action="mailto:emailexemplo@exemplo.com"
-      method="post"
-      enctype="text/plain">
-      <input type="text" name="nome" placeholder="O seu nome" required />
-      <input type="email" name="email" placeholder="O seu email" required />
-      <textarea
-        name="mensagem"
-        placeholder="A sua mensagem"
-        required>
-      </textarea>
-      <button type="submit">Enviar Mensagem</button>
-    </form>
+  <section class="hero-pagina" style="background-image: url('https://iremviagem.com/wp-content/uploads/2023/01/Costa-Galiza-4-1024x674.jpg'); height: 220px;">
+    <div class="hero-pagina__texto">
+      <h1>Fale Connosco</h1>
+    </div>
   </section>
 
-  <script src="../js/views/dia-noite.js"></script>
+  <div class="contacto-wrap">
+    <div class="contacto-info">
+      <h2>Estamos aqui para ajudar</h2>
+      <p>Se tiver alguma dúvida sobre o Caminho, sugestões para o site ou quiser partilhar a sua experiência, não hesite em contactar-nos.</p>
+
+      <div class="contacto-detalhe">
+        <span>📧</span>
+        <a href="mailto:info@senda.pt">info@senda.pt</a>
+      </div>
+      <div class="contacto-detalhe">
+        <span>📞</span>
+        <span><a href="tel:+351990000000">+351 990 000 000</a></span>
+      </div>
+      <div class="contacto-detalhe">
+        <span>🕐</span>
+        <span>Seg–Sex, 9h–18h</span>
+      </div>
+      <div class="contacto-detalhe">
+        <span>📍</span>
+        <span>Porto, Portugal</span>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>Enviar mensagem</h3>
+      <form id="form-contacto">
+        <div class="form-grupo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="O seu nome" required />
+        </div>
+        <div class="form-grupo">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="o.seu@email.pt" required />
+        </div>
+        <div class="form-grupo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" placeholder="Escreva a sua mensagem aqui..." required></textarea>
+        </div>
+        <div class="form-msg" id="form-feedback"></div>
+        <button type="submit" class="btn-primario" style="width:100%">Enviar mensagem</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>Senda</h4>
+        <p>© 2025 Senda. Todos os direitos reservados.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Explorar</h4>
+        <a href="../index.html">Início</a>
+        <a href="Prepare-se.html">Prepare-se</a>
+        <a href="Durante-o-Caminho.html">Durante o Caminho</a>
+        <a href="Santiago-e-Galiza.html">Santiago e Galiza</a>
+      </div>
+    </div>
+    <p class="footer__copy">Feito com ❤️ para os peregrinos do mundo inteiro.</p>
+  </footer>
+
+  <script src="../js/global.js"></script>
+  <script>
+    document.getElementById('form-contacto').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fb = document.getElementById('form-feedback');
+      fb.textContent = '✅ Mensagem enviada! Responderemos em breve.';
+      fb.className = 'form-msg sucesso';
+      fb.style.display = 'block';
+      this.reset();
+      setTimeout(() => { fb.style.display = 'none'; }, 5000);
+    });
+  </script>
 </body>
 </html>

@@ -2,79 +2,122 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prepare-se - Senda</title>
-  <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/prepare-se.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prepare-se — Senda</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
 </head>
+<body>
 
-<header class="navbar">
-  <a href="../index.html" class="logo">A Senda de Santiago</a>
-  <nav class="menu">
-  <a href="../index.html">Senda</a> 
-  
-  <a href="prepare-se.html">Prepare-se</a>
-  <a href="durante-o-caminho.html">Durante o Caminho</a>
-  <a href="santiago-e-galiza.html">Santiago e Galiza</a>
-  <a href="recomendacoes.html">Recomendações</a>
-  <a href="contacto.html">Contactos</a>
-</nav>
-</header>
+  <header class="navbar">
+    <a href="../index.html" class="navbar__logo">Senda</a>
+    <ul class="navbar__menu" id="navbar-menu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="Prepare-se.html">Prepare-se</a></li>
+      <li><a href="Durante-o-Caminho.html">Durante o Caminho</a></li>
+      <li><a href="Santiago-e-Galiza.html">Santiago e Galiza</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="contacto.html">Contactos</a></li>
+    </ul>
+    <div class="navbar__direita">
+      <button class="btn-tema" id="btn-tema" title="Alternar tema">🌙</button>
+      <div id="area-auth"></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-  <section class="hero">
-    <h1>Prepare-se para o Caminho</h1>
+  <section class="hero-pagina" style="background-image: url('https://www.vagamundos.pt/wp-content/uploads/2021/03/1-113.jpg')">
+    <div class="hero-pagina__texto">
+      <h1>Prepare-se para o Caminho</h1>
+      <p>Tudo o que precisa de saber antes de dar o primeiro passo.</p>
+    </div>
   </section>
 
-  <main class="content">
-    <section>
-      <h2>Conselhos e Recomendações</h2>
-      <p>Antes de iniciar o Caminho de Santiago, é essencial realizar um planeamento adaptado às suas capacidades físicas. Isso permitirá desfrutar da experiência de forma segura e agradável.</p>
-    </section>
+  <main class="pagina-conteudo">
 
-    <section>
-      <h2>Preparação Física e Mental</h2>
-      <p>É aconselhável preparar-se previamente com caminhadas e treinos de dificuldade crescente. Comece com passeios curtos em terrenos planos e, gradualmente, aumente a distância e a dificuldade para adaptar o corpo ao que encontrará no Caminho.</p>
-    </section>
+    <div class="info-card">
+      <p>💡 <strong>Dica essencial:</strong> Comece a preparar-se com pelo menos 4 a 6 semanas de antecedência, especialmente se nunca fez caminhadas longas.</p>
+    </div>
 
-    <section>
-      <h2>O que não pode deixar em casa</h2>
-      <ul>
-        <li>Saco de dormir</li>
-        <li>Calçado confortável e já usado</li>
-        <li>Cantil ou garrafa de água</li>
-        <li>Protetor solar de alta proteção</li>
-        <li>Pequeno estojo de primeiros socorros</li>
-        <li>Telemóvel com carregador</li>
-        <li>Documentação pessoal</li>
-      </ul>
-    </section>
+    <h2>Preparação Física e Mental</h2>
+    <p>Antes de iniciar o Caminho de Santiago, é essencial realizar um planeamento adaptado às suas capacidades físicas. Comece com passeios curtos em terrenos planos e, gradualmente, aumente a distância e a dificuldade. Três a quatro saídas por semana, durante pelo menos um mês, são o mínimo recomendado.</p>
+    <p>A componente mental é igualmente importante. O Caminho pode ser emocionalmente desafiante — prepare-se para momentos de solidão, cansaço e superação pessoal. Muitos peregrinos descrevem-no como uma jornada de autodescoberta.</p>
 
-    <section>
-      <h2>Utilidades e Serviços Tecnológicos</h2>
-      <p>Existem diversas aplicações e serviços que oferecem informações sobre albergues, pontos de interesse e estabelecimentos gastronómicos ao longo do Caminho. Utilize-os para facilitar a sua viagem.</p>
-    </section>
+    <h2>O que não pode deixar em casa</h2>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:1rem; margin: 1rem 0 1.5rem;">
+      <div class="info-card">
+        <strong>🥾 Calçado</strong>
+        <p style="margin-top:0.4rem">Botas já usadas e bem ajustadas. Nunca estreie calçado novo no Caminho.</p>
+      </div>
+      <div class="info-card">
+        <strong>🎒 Mochila</strong>
+        <p style="margin-top:0.4rem">Máximo 10% do seu peso corporal. Com suporte lombar e cinto peitoral.</p>
+      </div>
+      <div class="info-card">
+        <strong>💊 Primeiros socorros</strong>
+        <p style="margin-top:0.4rem">Pensos para bolhas, anti-inflamatório, ligaduras e protetor solar FPS 50+.</p>
+      </div>
+      <div class="info-card">
+        <strong>🌧️ Impermeável</strong>
+        <p style="margin-top:0.4rem">Capa para si e para a mochila. O tempo no norte pode mudar rapidamente.</p>
+      </div>
+    </div>
+
+    <h2>Lista de equipamento recomendado</h2>
+    <ul>
+      <li>Saco de dormir (verificar a temperatura mínima dos albergues)</li>
+      <li>Cantil ou garrafa de água reutilizável (mínimo 1,5 L)</li>
+      <li>Bastões de caminhada — reduzem o impacto nos joelhos em 30%</li>
+      <li>Roupa de secagem rápida (evite algodão)</li>
+      <li>Sandálias para usar nos albergues</li>
+      <li>Lanterna frontal com pilhas de reserva</li>
+      <li>Caderneta e caneta (para carimbar a credencial)</li>
+      <li>Documentação pessoal e cartão europeu de saúde</li>
+      <li>Telemóvel com carregador portátil (powerbank)</li>
+      <li>Dinheiro em notas — nem todos os albergues aceitam cartão</li>
+    </ul>
+
+    <h2>Utilidades Tecnológicas</h2>
+    <p>Existem aplicações excelentes para acompanhar o seu percurso:</p>
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom: 1rem;">
+      <span class="badge">Buen Camino App</span>
+      <span class="badge">Camino Ninja</span>
+      <span class="badge">Maps.me (offline)</span>
+      <span class="badge">Google Maps</span>
+      <span class="badge">Wikiloc</span>
+    </div>
+    <p>Recomendamos descarregar mapas offline antes de partir, pois o sinal de telemóvel pode ser fraco em algumas zonas rurais.</p>
+
+    <h2>A Credencial do Peregrino</h2>
+    <p>A Credencial (ou passaporte do peregrino) é o documento que comprova que está a fazer o Caminho. É carimbada nas igrejas, albergues, cafés e pontos de informação ao longo do percurso. No final, com pelo menos 100 km a pé (ou 200 km de bicicleta), pode solicitar a <strong>Compostela</strong> — o certificado oficial de conclusão.</p>
+    <p>Pode obter a sua Credencial nas associações de amigos do Caminho de Santiago em Portugal, ou diretamente nos escritórios de peregrinação.</p>
+
   </main>
 
   <footer class="footer">
-    <div class="flex-container">
-      <div class="flex-item">
-        <h3>Contactos</h3>
-        <ul>
-          <li><a href="mailto:info@senda.com">info@senda.com</a></li>
-          <li><a href="tel:+351912345678">+351 990 000 000</a></li>
-        </ul>
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>Senda</h4>
+        <p>© 2025 Senda. Todos os direitos reservados.</p>
       </div>
-      <div class="flex-item">
-        <h4>Subscreva a Newsletter</h4>
-        <form>
-          <input type="email" placeholder="O seu email" required />
-          <button type="submit">Subscrever</button>
-        </form>
+      <div class="footer__col">
+        <h4>Explorar</h4>
+        <a href="../index.html">Início</a>
+        <a href="Durante-o-Caminho.html">Durante o Caminho</a>
+        <a href="Santiago-e-Galiza.html">Santiago e Galiza</a>
+        <a href="recomendacoes.html">Recomendações</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <a href="mailto:info@senda.pt">info@senda.pt</a>
+        <a href="contacto.html">Formulário de contacto</a>
       </div>
     </div>
-    <p style="text-align:center; margin-top: 1rem;">© 2025 Senda. Todos os direitos reservados.</p>
+    <p class="footer__copy">Feito com ❤️ para os peregrinos do mundo inteiro.</p>
   </footer>
 
-  <script src="../js/views/dia-noite.js"></script>
+  <script src="../js/global.js"></script>
 </body>
 </html>

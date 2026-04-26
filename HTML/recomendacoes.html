@@ -2,63 +2,101 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recomendações - Senda</title>
-  <link rel="stylesheet" href="../css/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recomendações — Senda</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
 </head>
 <body>
+
   <header class="navbar">
-  <a href="../index.html" class="logo">Senda</a>
-  <nav class="menu">
-  <a href="../index.html">Senda</a> 
-  
-  <a href="prepare-se.html">Prepare-se</a>
-  <a href="durante-o-caminho.html">Durante o Caminho</a>
-  <a href="santiago-e-galiza.html">Santiago e Galiza</a>
-  <a href="recomendacoes.html">Recomendações</a>
-  <a href="contacto.html">Contactos</a>
-</nav>
-</header>
+    <a href="../index.html" class="navbar__logo">Senda</a>
+    <ul class="navbar__menu" id="navbar-menu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="Prepare-se.html">Prepare-se</a></li>
+      <li><a href="Durante-o-Caminho.html">Durante o Caminho</a></li>
+      <li><a href="Santiago-e-Galiza.html">Santiago e Galiza</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="contacto.html">Contactos</a></li>
+    </ul>
+    <div class="navbar__direita">
+      <button class="btn-tema" id="btn-tema" title="Alternar tema">🌙</button>
+      <div id="area-auth"></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-  <main style="padding: 2rem; max-width: 800px; margin: auto;">
-    <h1>Preparação antes de iniciar o Caminho</h1>
-    <p>
-      Antes de começar o Caminho de Santiago, é essencial preparar-se fisicamente. Nas semanas anteriores, 
-      faça caminhadas e treinos progressivos, aumentando gradualmente o tempo e a dificuldade. 
-      Isso ajuda o corpo a se adaptar ao esforço prolongado. Planeie as etapas 
-      de acordo com a sua condição física e objetivos. Respeite o seu ritmo: o Caminho
-      não é uma corrida. Tanto a jornada quanto o destino são igualmente importantes. 
-    </p>
+  <section class="hero-pagina" style="background-image: url('https://cdn-images.rtp.pt/arquivo/2018/02/compostela.png?crop=top&fit=crop&h=461&ixlib=php-1.1.0&w=860')">
+    <div class="hero-pagina__texto">
+      <h1>Recomendações</h1>
+      <p>Conselhos práticos para uma peregrinação segura e inesquecível.</p>
+    </div>
+  </section>
 
-    <h2>Se for de bicicleta</h2>
-    <p>
-      Para quem opta por fazer o Caminho de bicicleta, o ideal é dividir em etapas de 60 a 100 km. 
-      Vá sempre acompanhado, redobrando os cuidados com o trânsito e com os peregrinos a pé.
-    </p>
+  <main class="pagina-conteudo">
 
-    <h2>Equipamento essencial</h2>
+    <h2>Preparação antes de iniciar o Caminho</h2>
+    <p>Antes de começar o Caminho de Santiago, é essencial preparar-se fisicamente. Nas semanas anteriores, faça caminhadas e treinos progressivos, aumentando gradualmente o tempo e a dificuldade. Isso ajuda o corpo a adaptar-se ao esforço prolongado. Planeie as etapas de acordo com a sua condição física e objetivos. Respeite o seu ritmo: o Caminho não é uma corrida — tanto a jornada quanto o destino são igualmente importantes.</p>
+
+    <h2>🚴 Se for de Bicicleta</h2>
+    <p>Para quem opta por fazer o Caminho de bicicleta, o ideal é dividir em etapas de <strong>60 a 100 km</strong>. Vá sempre acompanhado, redobrando os cuidados com o trânsito e com os peregrinos a pé. Lembre-se que, para a Compostela, são necessários pelo menos 200 km pedalados.</p>
+    <div class="info-card">
+      <p>🚲 Os ciclistas devem levar sempre ferramentas de reparação básicas: câmaras-de-ar suplentes, bomba e um kit multiferramenta. As oficinas de bicicletas podem estar a mais de 30 km de distância em zonas rurais.</p>
+    </div>
+
+    <h2>🎒 Equipamento Essencial</h2>
     <ul>
-      <li><strong>Calçado:</strong> Use botas de trekking com sola dura. Evite calçados novos.</li>
-      <li><strong>Mochila:</strong> Não deve ultrapassar os 10 kg e deve estar ajustada ao centro do corpo.</li>
-      <li><strong>Kit de primeiros socorros:</strong> Inclua pensos para bolhas, agulhas e protetor solar.</li>
+      <li><strong>Calçado:</strong> Botas de trekking com sola dura e tornozelo reforçado. Evite calçado novo — use-o pelo menos 3 semanas antes.</li>
+      <li><strong>Mochila:</strong> Não deve ultrapassar os 10 kg (incluindo água). Deve estar ajustada ao centro do corpo, com cinto de anca bem apertado.</li>
+      <li><strong>Kit de primeiros socorros:</strong> Pensos para bolhas, agulha estéril, anti-inflamatório, ligaduras, protetor solar FPS 50+ e repelente de insetos.</li>
+      <li><strong>Roupa:</strong> Camisola de manga comprida de secagem rápida, forro polar leve, impermeável compacto e calças convertíveis.</li>
     </ul>
 
-    <h2>Alimentação e hidratação</h2>
-    <p>
-      Mantenha-se bem hidratado: beba cerca de dois litros de água por dia, antes, durante e depois das caminhadas.
-    </p>
+    <h2>💧 Alimentação e Hidratação</h2>
+    <p>Mantenha-se bem hidratado: beba cerca de <strong>dois a três litros de água por dia</strong>, antes, durante e depois das caminhadas. Em dias de calor ou em subidas exigentes, aumente a ingestão.</p>
+    <p>Para a alimentação, prefira alimentos ricos em hidratos de carbono complexos (pão, massa, arroz) e proteínas. Ao longo do Caminho encontrará bares e restaurantes — aproveite para provar a gastronomia local, mas não negligencie o pequeno-almoço antes de partir.</p>
 
-    <h2>Cuidados importantes</h2>
-    <p>
-      <strong>Emergências:</strong> Em caso de necessidade, ligue para o <strong>112</strong> — o serviço é gratuito e funciona 24 horas por dia.
-    </p>
+    <h2>⚠️ Cuidados Importantes</h2>
+    <ul>
+      <li><strong>Emergências:</strong> Em caso de necessidade, ligue para o <strong>112</strong> (Portugal e Espanha) — gratuito 24h/dia.</li>
+      <li><strong>Bolhas:</strong> Trate-as imediatamente com agulha esterilizada. Não as ignore — podem piorar significativamente em poucas horas.</li>
+      <li><strong>Joelhos:</strong> Use bastões de caminhada nas descidas e não force quando sentir dor. Uma lesão ignorada pode terminar a sua jornada prematuramente.</li>
+      <li><strong>Sol:</strong> Aplique protetor solar de 2 em 2 horas e use chapéu nas horas de maior calor (entre as 12h e as 16h).</li>
+    </ul>
 
-    <h2>Respeite o Caminho</h2>
-    <p>
-      Preserve este percurso milenar. Nunca deite lixo no chão. O Caminho é um património coletivo — cuide dele com respeito.
-    </p>
+    <h2>🌿 Respeite o Caminho</h2>
+    <p>O Caminho de Santiago é um Património da Humanidade e um corredor natural de grande valor ecológico. Nunca deite lixo no chão, respeite a flora e fauna locais, e não corte atravessando propriedades privadas. O Caminho é um bem coletivo — preserve-o para as gerações futuras.</p>
+
+    <div class="info-card">
+      <p>📱 <strong>App recomendada:</strong> O <em>Buen Camino</em> tem GPS offline, lista de albergues, pontos de água, farmácias e informação atualizada por outros peregrinos em tempo real.</p>
+    </div>
+
   </main>
 
-  <script src="../js/views/dia-noite.js"></script>
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h4>Senda</h4>
+        <p>© 2025 Senda. Todos os direitos reservados.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Explorar</h4>
+        <a href="../index.html">Início</a>
+        <a href="Prepare-se.html">Prepare-se</a>
+        <a href="Durante-o-Caminho.html">Durante o Caminho</a>
+        <a href="Santiago-e-Galiza.html">Santiago e Galiza</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <a href="mailto:info@senda.pt">info@senda.pt</a>
+        <a href="contacto.html">Formulário de contacto</a>
+      </div>
+    </div>
+    <p class="footer__copy">Feito com ❤️ para os peregrinos do mundo inteiro.</p>
+  </footer>
+
+  <script src="../js/global.js"></script>
 </body>
 </html>
